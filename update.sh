@@ -52,5 +52,3 @@ then
   xdg-open https://hub.docker.com/r/jojomi/hugo/builds/ > /dev/null
   xdg-open https://hub.docker.com/r/jojomi/hugo/~/settings/automated-builds/ > /dev/null
 fi
-
-
