@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t solareenlo/hugo .
+docker build -t solareenlo/docker-hugo .
