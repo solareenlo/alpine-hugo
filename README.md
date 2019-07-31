@@ -1,4 +1,4 @@
-# docker-hugo
+# solareenlo/alpine-hugo
 
 Docker image for hugo static page generator (https://gohugo.io)
 
