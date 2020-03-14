@@ -14,30 +14,30 @@ Docker image for hugo static page generator (https://gohugo.io)
 
 ## Executing
 
-    docker run --name "my-hugo" -P -v $(pwd):/src solareenlo/docker-hugo
+    docker run --name "my-hugo" -P -v $(pwd):/src solareenlo/alpine-hugo
 
 Or, more verbosely, and with a specified output mapping:
 
     docker run --name "my-hugo" --publish-all \
            --volume $(pwd):/src \
            --volume /tmp/hugo-build-output:/output \
-           solareenlo/docker-hugo
+           solareenlo/alpine-hugo
 
 Find your container:
 
     docker ps | grep "my-hugo"
     CONTAINER ID        IMAGE                           COMMAND                CREATED             STATUS              PORTS                   NAMES
-    ba00b5c238fc        solareenlo/docker-hugo:latest   "/run.sh"              7 seconds ago       Up 6 seconds        1313/tcp      my-hugo
+    ba00b5c238fc        solareenlo/alpine-hugo:latest   "/run.sh"              7 seconds ago       Up 6 seconds        1313/tcp      my-hugo
 
 
 ## Building The Image Yourself (optional)
 
-    docker build -t solareenlo/docker-hugo:latest .
+    docker build -t solareenlo/alpine-hugo:latest .
 
-The image is conveniently small at **about 20 MB** thanks to [alpine](http://gliderlabs.viewdocs.io/docker-alpine):
+The image is conveniently small at **about 20 MB** thanks to [alpine](http://gliderlabs.viewdocs.io/alpine-hugo):
 
     docker images | grep hugo
-    solareenlo/docker-hugo:0.18   latest              b2e7a8364baa        1 second ago      21.9 MB
+    solareenlo/alpine-hugo:0.18   latest              b2e7a8364baa        1 second ago      21.9 MB
 
 
 
@@ -54,7 +54,7 @@ Using this docker image together with nginx for serving static data.
 
 ```yaml
 hugo:
-  image: solareenlo/docker-hugo:latest
+  image: solareenlo/alpine-hugo:latest
   volumes:
     - ./src/:/src
     - ./output/:/output
